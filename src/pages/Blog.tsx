@@ -13,9 +13,8 @@ const Blog: React.FC = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get('https://health.gov/myhealthfinder/api/v3/itemlist.json?Type=topicssdff');
+        const response = await axios.get('https://health.gov/myhealthfinder/api/v3/itemlist.json?Type=topic');
         setTopics(response.data.Result.Items.Item);
-        console.log(response.data.Result.Items.Item);
       } catch (error) {
         if (error instanceof Error) {
           setError(`Error: ${error.message}`);
@@ -43,9 +42,9 @@ const Blog: React.FC = () => {
       <div>
         {
           topics.map((topic) => (
-            <Link to={`https://health.gov/myhealthfinder/api/v3/topicsearch.json?TopicId=${topic.Id}`} key={topic.Id}
+            <Link to={`/topic/${topic.Id}`} key={topic.Id}
             className='block p-2 text-lg font-semibold hover:underline hover:text-white hover:bg-cyan-600
-            hover:scale-110 transition-transform duration-500 w-max m-2 text-cyan-600'
+            hover:scale-105 transition-transform duration-500 w-max m-2 text-cyan-600'
             >
               {topic.Title}
             </Link>

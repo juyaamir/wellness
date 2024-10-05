@@ -81,7 +81,7 @@ const Categories = () => {
           <p className="md:text-xl lg:text-2xl">My HealthFinder is a tool that provides personalized health recommendations based on your answers to a few simple questions. The tool is designed to help you find the information you need to stay healthy and make informed decisions about your health.</p>
         </div>
         <div className="">
-          <img src={doc1} alt="a doctor and a patient " className="md:h-80 object-cover" />
+          <img src={doc1} alt="a doctor and a patient " className="md:h-40 object-cover" />
         </div>
       </div>
       <div className="bg-green-600 flex flex-wrap md:flex-nowrap gap-2 justify-around md:p-6">
@@ -91,7 +91,7 @@ const Categories = () => {
           <form className="flex flex-col gap-3 p-4" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="age">Your Age: </label>
-              <input type="number" name="age" id="age" onChange={handleChange} className="border border-gray-400 rounded-md" />
+              <input type="number" name="age" id="age" onChange={handleChange} className="border border-gray-400 rounded-md w-16" max='200' min='1'  />
             </div>
             <div className="flex gap-4">
               <label >Your Gender: </label>
