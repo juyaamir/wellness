@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';  
 
-interface ParamTypes {
-    id: number;
+interface ParamTypes extends Record<string, string | undefined> {
+    id: string;
 }
 
 
