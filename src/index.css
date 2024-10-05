@@ -7,5 +7,14 @@
       width: 70%;
     }
   }
-  
 
+  .my-health {
+    width: 600px;
+  }
+  
+@media  screen and (max-width: 768px) {
+    .my-health {
+      width: 100%;
+    }
+  
+}

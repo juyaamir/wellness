@@ -4,8 +4,8 @@ interface NavItem {
 }
 export const navbar: NavItem[] = [
     { title: 'Home',path: '/'},
-    { title: 'Topics', path: '/blog'},
-    { title: 'My Health', path: '/categories'},
+    { title: 'Topics', path: '/topics'},
+    { title: 'My Health', path: '/my-health'},
     { title: 'Resources', path: '/resources'},
     { title: 'About',path: '/about'},
     { title: 'Contact', path: '/contact'},

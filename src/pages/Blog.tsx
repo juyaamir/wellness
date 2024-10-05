@@ -13,7 +13,7 @@ const Blog: React.FC = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.get('https://health.gov/myhealthfinder/api/v3/itemlist.json?Type=topic');
+        const response = await axios.get('https://health.gov/myhealthfinder/api/v3/itemlist.json?Type=topicssdff');
         setTopics(response.data.Result.Items.Item);
         console.log(response.data.Result.Items.Item);
       } catch (error) {
