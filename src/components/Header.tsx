@@ -15,7 +15,7 @@ const Header = () => {
         <p className='lg:text-4xl md:text-2xl sm:text-xl text-green-700'>Empower Your Health Journey</p>
         <div className='flex '>
           <input type='search' placeholder='Search Wellness Hub...' 
-          className='px-2 py-1 border-2 border-gray-300 rounded-tl-md rounded-bl-md hover:outline-green-400 hover:shadow-lg search-input' />
+          className='px-2 py-1 border border-gray-300 rounded-tl-md rounded-bl-md hover:outline-green-400 hover:shadow-lg search-input' />
           <button 
           className=' px-2 bg-green-600 hover:bg-green-800 text-white py-1 border-none rounded-tr-md rounded-br-md'>Search</button>
         </div>

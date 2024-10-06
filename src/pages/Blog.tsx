@@ -39,12 +39,12 @@ const Blog: React.FC = () => {
   return (
     <div className='p-6'>
       <h1 className='text-xl font-bold text-gray-600 text-center'>Find Information on health and wellness!</h1>
-      <div>
+      <div className='flex flex-col gap-1'>
         {
           topics.map((topic) => (
             <Link to={`/topic/${topic.Id}`} key={topic.Id}
-            className='block p-2 text-lg font-semibold hover:underline hover:text-white hover:bg-cyan-600
-            hover:scale-105 transition-transform duration-500 w-max m-2 text-cyan-600'
+            className=' font-semibold hover:underline hover:text-white hover:bg-cyan-600
+            hover:scale-105 transition-transform duration-500 text-cyan-600'
             >
               {topic.Title}
             </Link>
