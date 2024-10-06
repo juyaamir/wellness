@@ -53,21 +53,12 @@ const TopicDetails = () => {
                     <div className="flex flex-wrap md:flex-nowrap justify-between bg-gray-100 pt-8 md:px-4">
                         <div className="my-health p-2">
                         <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center border-b-4 pb-2 border-b-green-600">{top.Categories}</p>
-                            <p className="md:text-xl lg:text-2xl">{top.Title}</p>
+                        <p className="text-xl md:text-3xl text-center">{top.Title}</p>
                         </div>
                             <div className="">
                             <img src={top.ImageUrl} alt={top.ImageAlt} className=" object-cover" />
                         </div>
                     </div>
-                    <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center border-b-4 pb-2 border-b-green-600">You may also like these topics</p>
-                    {
-                        top.RelatedItems.RelatedItem.map((item: any) => (
-                            <div key={item.Id} className='p-4'>
-
-                                <p className="md:text-xl lg:text-2xl">{item.Title}</p>
-                            </div>
-                        ))
-                    }
                     <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center border-b-4 pb-2 border-b-green-600">Overview</p>
                     {
                         top.Sections.section.map((section: any, index: number) => (

@@ -14,17 +14,20 @@ const Footer = () => {
             className='px-2 bg-green-600 hover:bg-green-800 text-white py-1 border-none rounded-tr-lg rounded-br-lg'>Subscribe</button>
           </form>
             
-            <div className='flex gap-4 flex-wrap'>
+            <div className='flex gap-2 flex-wrap'>
           
               
-            <p className='flex items-center justify-center font-bold text-gray-600 '>Follow Us</p>
-            {
+            <p className='flex items-center mx-auto font-bold text-gray-600 '>Follow Us</p>
+            <div className='flex'>
+              {
               footerLinks.map((item) => (
-                <Link key={item.path} to = {item.path} target='_blank' rel='noreferrer' className='hover:scale-125 duration-500 transition-transform  '>
+                <Link key={item.path} to = {item.path} target='_blank' rel='noreferrer' className='hover:scale-125 duration-500 transition-transform block '>
                   <img src={item.source} alt={item.alt} className='h-10 w-10' />
                 </Link>
               ))
             }
+            </div>
+
           </div>
         </div>
         <p className='text-sm md:text-lg text-center p-1'>&copy; 2024 | Designed & Coded with ❤️ by Amir Muhammad Juya</p>
