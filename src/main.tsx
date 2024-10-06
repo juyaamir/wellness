@@ -5,7 +5,7 @@ import './index.css'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 createRoot(document.getElementById('root')!).render(
-  <Router>
+  <Router basename='/wellness'>
   <StrictMode>
     <App />
   </StrictMode>

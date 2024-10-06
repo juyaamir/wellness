@@ -12,6 +12,7 @@ const Router = () => {
   return (
     <Routes>
       < Route path='/' element={<Home />} />
+      
       < Route path='/about' element={<About />} />
       < Route path='/topics' element={<Blog />} />
       < Route path='/topic/:id' element={<TopicDetails />} />
