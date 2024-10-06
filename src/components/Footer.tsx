@@ -4,7 +4,7 @@ import { footerLinks } from '../data/data'
 
 const Footer = () => {
   return (
-      <footer className=' '>
+      <footer className=' mt-8'>
         <div className='flex flex-wrap justify-around items-center border border-b-gray-300 p-1'>  
         <p><Link to='/terms' className='hover:text-green-400'>Terms & Conditions</Link></p>
           <form  className='flex'>

@@ -10,7 +10,6 @@ const Blog: React.FC = () => {
   const [topics, setTopics] = useState<Topic[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [count, setCount] = useState(0); 
     useEffect(() => {
     const getData = async () => {
       try {

@@ -51,15 +51,15 @@ const TopicDetails = () => {
                 <div key={top.Id} className=''>
 
                     <div className="flex flex-wrap md:flex-nowrap justify-between bg-gray-100 pt-8 md:px-4">
-                        <div className="my-health p-2">
-                        <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center border-b-4 pb-2 border-b-green-600">{top.Categories}</p>
-                        <p className="text-xl md:text-3xl text-center">{top.Title}</p>
+                        <div className="my-health p-2 flex flex-col items-center justify-center">
+                            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center border-b-4 pb-2  border-b-green-600">{top.Categories}</p>
+                            <p className="text-xl md:text-3xl text-center">{top.Title}</p>
                         </div>
                             <div className="">
                             <img src={top.ImageUrl} alt={top.ImageAlt} className=" object-cover" />
                         </div>
                     </div>
-                    <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center border-b-4 pb-2 border-b-green-600">Overview</p>
+                    <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center border-b-4 p-2 mt-4 border-b-green-600">Overview</p>
                     {
                         top.Sections.section.map((section: any, index: number) => (
                             <div key={index} className='p-4'>
