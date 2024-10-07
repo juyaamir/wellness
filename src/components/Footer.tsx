@@ -6,7 +6,7 @@ const Footer = () => {
   return (
       <footer className=' mt-8'>
         <div className='flex flex-wrap justify-around items-center border border-b-gray-300 p-1'>  
-        <p><Link to='/terms' className='hover:text-green-400'>Terms & Conditions</Link></p>
+   {/*      <p><Link to='/terms' className='hover:text-green-400'>Terms & Conditions</Link></p> */}
           <form  className='flex'>
             <input type='email' placeholder='Enter your email' 
             className='px-2 py-1 border-2 border-gray-300 rounded-tl-md rounded-bl-md hover:outline-green-400 subscribe-input ' />

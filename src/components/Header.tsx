@@ -54,9 +54,15 @@ const Header = () => {
         </div>
         {
           showSearch && (
-            <div className='flex py-2 px-4 bg-gray-200'>
-              <input type="search" placeholder='Search Wellness Hub....' className='flex-grow rounded-tl-md rounded-bl-md p-2 outline-none border border-gray-400 shadow-md focus:border-green-400' />
-              <button className='bg-green-500 hover:bg-green-700 text-white font-bold p-2 rounded-tr-md rounded-br-md'>Go</button>
+            <div className='flex py-2 px-4 bg-gray-200 justify-center'>
+              <input
+                type="search"
+                placeholder='Search Wellness Hub...'
+                className='flex-grow flex-shrink max-w-xs rounded-tl-md rounded-bl-md p-2 outline-none border border-gray-400 shadow-md focus:border-green-400 search-input'
+              />
+              <button className='bg-green-500 hover:bg-green-700 text-white font-bold p-2 rounded-tr-md rounded-br-md'>
+                Go
+              </button>
             </div>
           )
         }
