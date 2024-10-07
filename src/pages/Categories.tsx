@@ -2,6 +2,8 @@ import { useState} from "react"
 import doc1 from '../assets/doc1.png'
 import health from '../assets/health.png'
 import axios from 'axios'
+import { RotatingLines } from 'react-loader-spinner'
+import { Link } from "react-router-dom"
 interface Topics {
   sex: string;
   age: number;
@@ -64,9 +66,18 @@ const Categories = () => {
       }
     };
 
-  if (loading) {
-    return <div>Loading...</div>
-  };
+    if (loading) {
+      return <div className='flex justify-center items-center pt-20'>
+      <RotatingLines
+              visible={true}
+              width="96"
+              strokeColor="green"
+              strokeWidth="5"
+              animationDuration="0.75"
+              ariaLabel="rotating-lines-loading"
+        />
+      </div>
+    };
   if (error) {
     return <div>{error}</div>
   };
@@ -137,15 +148,15 @@ const Categories = () => {
           <img src={health} alt="Health, Wealth, and Happiness" className="md:h-80 object-cover" />
         </div>
       </div>
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap justify-center items-center gap-4">
       {
-      topics.map((topic, index) => (
-          <div key={index} className="w-56">
-            <img src={topic.ImageUrl} alt="" />
-            <h3>{topic.Title}</h3>
-            <p>{topic.Id}</p>
-            <p>{topic.Categories}</p>
-
+      topics.map((topic) => (
+          <div key={topic.Id} className="w-56 text-cyan-700 hover:underline border border-gray-300 rounded-lg p-1
+          hover:bg-green-700 hover:text-white">
+            <Link to={`/topic/${topic.Id}`} >
+            <img src={topic.ImageUrl} alt={topic.Categories} />
+              <h3 className="text-center p-1">{topic.Title}</h3>
+            </Link>
           </div>
         ))
         }

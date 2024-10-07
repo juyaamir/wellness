@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
-
+import { RotatingLines } from 'react-loader-spinner'
 interface Topic {
   Id: number;
   Title: string;
@@ -28,7 +28,16 @@ const Blog: React.FC = () => {
     getData();
   }, []);
   if (loading) {
-    return <div>Loading...</div>
+    return <div className='flex justify-center items-center pt-20'>
+    <RotatingLines
+            visible={true}
+            width="96"
+            strokeColor="green"
+            strokeWidth="5"
+            animationDuration="0.75"
+            ariaLabel="rotating-lines-loading"
+      />
+    </div>
   };
   if (error) {
     return <div>{error}</div>

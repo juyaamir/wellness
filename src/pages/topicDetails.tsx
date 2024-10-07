@@ -1,12 +1,35 @@
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios';  
+import { Link } from 'react-router-dom';
 
 interface ParamTypes extends Record<string, string | undefined> {
     id: string;
 }
+interface RelatedItem {
+    Id: number;
+    Title: string;
+}
 
+interface Section {
+    Title: string;
+    Id: number;
+    Content: string;
+}
 
+interface Topic {
+    Categories: string;
+    Id: number;
+    Title: string;
+    ImageUrl: string;
+    ImageAlt: string;
+    Sections: {
+        section: Section[];
+    };
+    RelatedItems: {
+        RelatedItem: RelatedItem[];
+    };
+}
 
 
 const TopicDetails = () => {
@@ -47,7 +70,7 @@ const TopicDetails = () => {
     <div className=''>
         
         { topic &&
-            topic.map((top: any) => (
+            topic.map((top: Topic) => (
                 <div key={top.Id} className=''>
 
                     <div className="flex flex-wrap md:flex-nowrap justify-between bg-gray-100 pt-8 md:px-4">
@@ -61,11 +84,24 @@ const TopicDetails = () => {
                     </div>
                     <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center border-b-4 p-2 mt-4 border-b-green-600">Overview</p>
                     {
-                        top.Sections.section.map((section: any, index: number) => (
-                            <div key={index} className='p-4'>
+                        top.Sections.section.map((section: Section) => (
+                            <div key={section.Id} className='p-4'>
                                 <h2 className='text-cyan-500 text-xl font-semibold'>{section.Title}</h2>
                                 <div dangerouslySetInnerHTML={{ __html: section.Content }} />
                             </div>
+                        ))
+                    }
+                {/* Related Topics */}
+                    <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center border-b-4 p-2 mt-4 border-b-green-600">You may also like these topics</p>
+                    {
+                        top.RelatedItems.RelatedItem.map((related: RelatedItem) => (
+                            <Link to={`/topic/${related.Id}`} key={related.Id} 
+                            className='' >
+                                <p 
+                                className='text-cyan-500  font-semibold px-4'
+                                >{related.Title}</p>
+                            
+                            </Link>
                         ))
                     }
                 </div>

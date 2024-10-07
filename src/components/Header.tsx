@@ -54,7 +54,7 @@ const Header = () => {
               {showNav ? <GrClose size={30} /> : <RxHamburgerMenu size={36} />}
             </button>
             <button className='focus:bg-gray-200 px-4 py-2 ' onClick={handleSearchToggle}>Search</button>
-            <button className='px-4 py-2 '>
+            <button className='px-4 py-2 ' onClick={() => setAuthenticated(true)}>
               {
                 authenticated ?  'Hi, Juya': <CgProfile size={36} className='' /> 
               }
