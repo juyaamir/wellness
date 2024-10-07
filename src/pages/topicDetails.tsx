@@ -82,7 +82,7 @@ const TopicDetails = () => {
                             <img src={top.ImageUrl} alt={top.ImageAlt} className=" object-cover" />
                         </div>
                     </div>
-                    <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center border-b-4 p-2 mt-4 border-b-green-600">Overview</p>
+                    <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center border-b-4 p-2 m-4 border-b-green-600">Overview</p>
                     {
                         top.Sections.section.map((section: Section) => (
                             <div key={section.Id} className='p-4'>
@@ -92,7 +92,7 @@ const TopicDetails = () => {
                         ))
                     }
                 {/* Related Topics */}
-                    <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center border-b-4 p-2 mt-4 border-b-green-600">You may also like these topics</p>
+                    <p className="text-xl md:text-2xl lg:text-3xl font-bold text-center border-b-4 p-2 m-4 border-b-green-600">You may also like these topics</p>
                     {
                         top.RelatedItems.RelatedItem.map((related: RelatedItem) => (
                             <Link to={`/topic/${related.Id}`} key={related.Id} 

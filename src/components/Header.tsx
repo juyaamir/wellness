@@ -68,7 +68,7 @@ const Header = () => {
                 placeholder='Search Wellness Hub...'
                 className='flex-grow  max-w-xs p-2 outline-none border border-gray-400 shadow-md focus:border-green-400 search-input '
               />
-              <button className='bg-green-500 hover:bg-green-700 text-white font-bold p-2 rounded-tr-md rounded-br-md'>
+              <button className='bg-green-500 hover:bg-green-700 text-white font-bold p-2 '>
                 Go
               </button>
             </div>
