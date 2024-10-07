@@ -12,9 +12,16 @@
     width: 600px;
   }
   
-@media  screen and (max-width: 768px) {
+@media  (max-width: 768px) {
     .my-health {
       width: 100%;
     }
+    .desktop-nav{
+      display:none;
+    }
+    .header-message {
+      display: none;
+    }
   
-}
+};
+

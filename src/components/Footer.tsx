@@ -18,10 +18,10 @@ const Footer = () => {
           
               
             <p className='flex items-center mx-auto font-bold text-gray-600 '>Follow Us</p>
-            <div className='flex'>
+            <div className='flex justify-between  mx-auto '>
               {
               footerLinks.map((item) => (
-                <Link key={item.path} to = {item.path} target='_blank' rel='noreferrer' className='hover:scale-125 duration-500 transition-transform block '>
+                <Link key={item.path} to = {item.path} target='_blank' rel='noreferrer' className='hover:scale-125 duration-500 transition-transform '>
                   <img src={item.source} alt={item.alt} className='h-10 w-10' />
                 </Link>
               ))
