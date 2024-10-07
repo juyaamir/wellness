@@ -3,6 +3,7 @@ import { navbar } from '../data/data.tsx';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
 
+
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
@@ -58,7 +59,7 @@ const Header = () => {
               <input
                 type="search"
                 placeholder='Search Wellness Hub...'
-                className='flex-grow flex-shrink max-w-xs rounded-tl-md rounded-bl-md p-2 outline-none border border-gray-400 shadow-md focus:border-green-400 search-input'
+                className='flex-grow  max-w-xs p-2 outline-none border border-gray-400 shadow-md focus:border-green-400 search-input'
               />
               <button className='bg-green-500 hover:bg-green-700 text-white font-bold p-2 rounded-tr-md rounded-br-md'>
                 Go
