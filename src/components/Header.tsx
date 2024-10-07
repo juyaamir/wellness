@@ -2,11 +2,14 @@ import { useState } from 'react';
 import { navbar } from '../data/data.tsx';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
-
+import { CgProfile } from "react-icons/cg";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { GrClose } from "react-icons/gr";
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [authenticated, setAuthenticated] = useState(false);
   const handleToggle = () => {
     setShowNav(!showNav);
   };
@@ -47,11 +50,15 @@ const Header = () => {
           <p className='font-bold text-green-600 text-lg'>Wellness <span className='text-cyan-600'>Hub</span></p></Link>
         
         <div className='flex  justify-between  '>
-            <button className='px-4 py-2 rounded-md  text-2xl' onClick={handleToggle}>
-              {showNav ? <span>&#10005;</span> : <span>&#9776;</span>}
+            <button className='px-4 py-2 rounded-md  text-2xl ' onClick={handleToggle}>
+              {showNav ? <GrClose size={30} /> : <RxHamburgerMenu size={36} />}
             </button>
-            <button className='focus:bg-gray-200 px-4 py-2' onClick={handleSearchToggle}>Search</button>
-            <button className='px-4 py-2'>Sign In</button>
+            <button className='focus:bg-gray-200 px-4 py-2 ' onClick={handleSearchToggle}>Search</button>
+            <button className='px-4 py-2 '>
+              {
+                authenticated ?  'Hi, Juya': <CgProfile size={36} className='' /> 
+              }
+            </button>
         </div>
         {
           showSearch && (
@@ -59,7 +66,7 @@ const Header = () => {
               <input
                 type="search"
                 placeholder='Search Wellness Hub...'
-                className='flex-grow  max-w-xs p-2 outline-none border border-gray-400 shadow-md focus:border-green-400 search-input'
+                className='flex-grow  max-w-xs p-2 outline-none border border-gray-400 shadow-md focus:border-green-400 search-input '
               />
               <button className='bg-green-500 hover:bg-green-700 text-white font-bold p-2 rounded-tr-md rounded-br-md'>
                 Go
@@ -68,9 +75,9 @@ const Header = () => {
           )
         }
         {showNav && (
-          <div className='flex flex-col items-center bg-slate-100 text-green-600 border-t border-slate-400 transition-all duration-300 ease-in-out'>
+          <div className='flex flex-col items-center bg-gray-100 text-green-600 border-t border-slate-400 transition-all duration-300 ease-in-out border-y border-y-gray-300 shadow-md'>
             {navbar.map((item) => (
-              <Link key={item.path} to={item.path} onClick={() => setShowNav(false)} className='p-4 w-full text-center hover:bg-green-800 hover:text-white md:text-xl lg:text-2xl'>
+              <Link key={item.path} to={item.path} onClick={() => setShowNav(false)} className='p-4 w-full text-center hover:bg-green-800 hover:text-white md:text-xl'>
                 {item.title}
               </Link>
             ))}

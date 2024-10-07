@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import health from '../assets/healts.jpg';
 const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center  bg-gray-100 p-2 md:p-4">
+    <div className="flex flex-col items-center justify-center   p-2 md:p-4">
       <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center text-green-700 mb-4">Welcome to the Wellness Hub</h1>
       <p className="text-lg lg:text-2xl md:text-xl text-center text-gray-700 max-w-2xl">
         Welcome to the Wellness Hub, your go-to resource for health and wellness information. Explore a wide range of topics and receive personalized recommendations using our My Health tool, available in the My Health section.
