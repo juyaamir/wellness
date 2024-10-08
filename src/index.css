@@ -23,5 +23,9 @@
       display: none;
     }
   
-};
+}
 
+.subscribe {
+  max-width: 50rem ;
+  
+}

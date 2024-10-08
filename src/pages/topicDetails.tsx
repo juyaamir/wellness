@@ -98,7 +98,7 @@ const TopicDetails = () => {
                             <Link to={`/topic/${related.Id}`} key={related.Id} 
                             className='' >
                                 <p 
-                                className='text-cyan-500  font-semibold px-4 hover:bg-green-700 hover:text-white py-1 px-2 w-max'
+                                className='text-cyan-500  font-semibold hover:bg-green-700 hover:text-white py-1 px-2 w-max'
                                 >{related.Title}</p>
                             
                             </Link>

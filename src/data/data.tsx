@@ -9,6 +9,7 @@ export const navbar: NavItem[] = [
     { title: 'Resources', path: '/resources'},
     { title: 'About',path: '/about'},
     { title: 'Contact', path: '/contact'},
+  /*   { title: 'SUBSCRIBE', path: '/subscribe'} */
    
 ];
 

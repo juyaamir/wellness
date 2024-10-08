@@ -31,7 +31,9 @@ const Header = () => {
           <button className='px-2 bg-green-600 hover:bg-green-800 text-white py-1 border-none rounded-tr-md rounded-br-md'>Search</button>
         </div>
         <div className='hidden md:flex'>
-          <button className='bg-green-600 hover:bg-green-800 text-white px-2 py-1 rounded-md'>Sign In</button>
+          <Link to ='/subscribe' 
+          className='text-green-600 font-bold px-2 py-1 rounded-lg hover:text-white hover:bg-green-600'>
+            SUBSCRIBE</Link>
         </div>
         </div>
       <nav className=' flex  justify-center gap-8 items-center bg-slate-100 text-green-600 border-y border-slate-400 '>
@@ -62,13 +64,13 @@ const Header = () => {
         </div>
         {
           showSearch && (
-            <div className='flex py-2 px-4 bg-gray-200 justify-center'>
+            <div className='flex  gap-2 py-2 px-4 bg-gray-200 justify-center'>
               <input
                 type="search"
                 placeholder='Search Wellness Hub...'
-                className='flex-grow  max-w-xs p-2 outline-none border border-gray-400 shadow-md focus:border-green-400 search-input '
+                className='flex-grow  max-w-xs p-2 outline-none border border-gray-400 shadow-md focus:border-green-400 search-input rounded-md'
               />
-              <button className='bg-green-500 hover:bg-green-700 text-white font-bold p-2 '>
+              <button className='bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md '>
                 Go
               </button>
             </div>

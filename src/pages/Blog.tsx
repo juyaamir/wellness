@@ -53,7 +53,7 @@ const Blog: React.FC = () => {
           topics.map((topic) => (
             <Link to={`/topic/${topic.Id}`} key={topic.Id}
             className=' font-semibold hover:underline hover:text-white hover:bg-cyan-600
-            hover:scale-105 transition-transform duration-500 text-cyan-600'
+            hover:scale-105 transition-transform duration-500 text-cyan-600 max-w-max'
             >
               
             {topic.Id}  {topic.Title}
