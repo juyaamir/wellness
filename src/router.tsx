@@ -8,8 +8,7 @@ import TopicDetails from './pages/topicDetails'
 import { Route, Routes } from 'react-router-dom'
 import Subscribe from './components/Subscribe'
 import Feedback from './components/Feedback'
-
-
+import Resource from './pages/Resource'
 const Router = () => {
   return (
     <Routes>
@@ -22,6 +21,7 @@ const Router = () => {
       < Route path='/contact' element={<Contact />} />
       < Route path='/subscribe' element={<Subscribe />} />
       < Route path='/feedback' element={<Feedback />} />
+      < Route path='/resources' element={<Resource />} />
     </Routes>
   )
 }

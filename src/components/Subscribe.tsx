@@ -46,6 +46,7 @@ const Subscribe = () => {
             <form className='flex flex-col md:flex-row py-4 gap-4' onSubmit={handleSubmit}>
               <input
                 type='email'
+                value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder='Enter your email'
                 className='p-2 border border-gray-300 rounded-md flex-grow outline-none hover:border-green-500'
@@ -57,7 +58,7 @@ const Subscribe = () => {
                 Subscribe
               </button>
             </form>
-            {error && <p className='text-red-500'>{error}</p>}
+            {error && <p className='text-red-500 mt-2'>{error}</p>}
             <p className='text-base'>
               Your privacy matters to us. Information you submit on this website may be stored on servers outside the EU. If you do not consent to this, please refrain from providing your information.
             </p>

@@ -14,7 +14,7 @@ const Feedback = () => {
              <Link to='/'
                 className='px-4 py-2 rounded-full bg-white absolute top-2 right-2 z-50 text-xl '
             >X</Link>
-          <div className='subscribe bg-white relative gap-1 rounded-lg flex flex-col-reverse  md:flex-row p-2 overflow-auto'>
+          <div className='subscribe bg-white relative gap-1 rounded-lg flex flex-col-reverse mt-8 md:mt-auto  md:flex-row p-2 overflow-auto'>
 
             <div className='flex justify-center items-center'>
               <img src={instagram} alt="feedback image" className='object-cover md:h-full' />
