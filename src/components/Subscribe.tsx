@@ -27,18 +27,16 @@ const Subscribe = () => {
   return (
     <div>
       <div 
-      className='fixed flex justify-center items-center inset-0 bg-black bg-opacity-50 p-8 text-center md:text-start'
+        className='fixed flex justify-center items-center inset-0 bg-black bg-opacity-50 p-8 text-center md:text-start'
       >
         <Link to='/'
           className='px-4 py-2 rounded-full bg-white absolute top-2 right-2 z-50 text-xl '
         >X</Link>
-        <div className='subscribe bg-white relative gap-2 rounded-lg flex flex-col md:flex-row '>
-
-          <div className='flex justify-center items-center'>
-            <img src={subscribe} alt="subscribe image" className='object-cover md:h-full ' />
+        <div className='subscribe bg-white relative gap-2 rounded-lg flex flex-col md:flex-row w-full max-w-4xl'>
+          <div className='flex justify-center items-center w-full md:w-1/2'>
+            <img src={subscribe} alt="subscribe image" className='object-cover w-full h-full md:h-auto rounded-t-lg md:rounded-none md:rounded-l-lg' />
           </div>
-          
-          <div className='flex flex-col p-4 '>
+          <div className='flex flex-col p-4 w-full md:w-1/2'>
             <h1 className='text-3xl font-bold font-mono mx-auto pb-1 mb-1 text-green-500 border-b-4 border-green-500'>
               Wellness Hub
             </h1>
