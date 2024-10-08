@@ -45,6 +45,9 @@ const Categories = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await getData();
+    // go to the topics section
+    const topicsSection = document.getElementById('topics-section');
+    topicsSection?.scrollIntoView({behavior: 'smooth', block: 'end'});
 
   }
 
@@ -143,12 +146,14 @@ const Categories = () => {
             </div>
           </form>
         </div>
-        <div className="flex flex-col items-center justify-between bg-gray-100 rounded-md  shadow-2xl ">
+
+        
+        <div className="flex flex-col items-center justify-between bg-gray-100 rounded-md  shadow-2xl hidden md:block ">
           <h1 className="text-2xl font-bold text-green-700 p-4 text-center">Health is Wealth and Brings Happiness</h1>
           <img src={health} alt="Health, Wealth, and Happiness" className="md:h-80 object-cover" />
         </div>
       </div>
-      <div className="flex flex-wrap justify-center items-center gap-4">
+      <div className="flex flex-wrap justify-center items-center gap-4" id="topics-section">
       {
       topics.map((topic) => (
           <div key={topic.Id} className="w-56 text-cyan-700 hover:underline border border-gray-300 rounded-lg p-1

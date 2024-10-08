@@ -32,13 +32,13 @@ const Contact = () => {
   }
   return (
     <div className='p-8'>
-      <h1 className='text-4xl font-bold text-gray-500 mb-4'>Contact Us</h1>
+      <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold text-gray-500 mb-4'>Contact Us</h1>
       <p className='text-lg mb-8'>
         We'd love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out to us using the form below or through our contact details.
       </p>
       <div className='flex flex-col md:flex-row gap-8'>
         <div className='w-full md:w-1/2'>
-          <h2 className='text-3xl font-bold text-gray-500 mb-4'>Contact Form</h2>
+          <h2 className='text-xl md:text-2xl lg:text-3xl font-bold text-gray-500 mb-4'>Contact Form</h2>
           <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
             <input
               type='text'
@@ -73,7 +73,7 @@ const Contact = () => {
           </form>
         </div>
         <div className='w-full md:w-1/2'>
-          <h2 className='text-3xl font-bold text-gray-500 mb-4'>Contact Details</h2>
+          <h2 className='text-xl md:text-2xl lg:text-3xl font-bold text-gray-500 mb-4'>Contact Details</h2>
           <p className='text-lg mb-2'>
             <strong>Address:</strong> 123 Wellness Street, Health City, HC 12345
           </p>
@@ -81,9 +81,9 @@ const Contact = () => {
             <strong>Phone:</strong> (123) 456-7890
           </p>
           <p className='text-lg mb-2'>
-            <strong>Email:</strong> contact@wellnesshub.com
+            <strong>Email:</strong> juya@wellnesshub.com
           </p>
-          <h2 className='text-3xl font-bold text-gray-500 mb-4 mt-8'>Our Location</h2>
+          <h2 className='text-xl md:text-2xl lg:text-3xl font-bold text-gray-500 mb-4 mt-8'>Our Location</h2>
           <div className='w-full h-64 bg-gray-200 rounded-md'>
             {/* Replace with an actual map embed */}
             <p className='text-center text-gray-600 p-8'>Map Placeholder</p>
