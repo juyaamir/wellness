@@ -21,8 +21,10 @@ const Header = () => {
       <div className='desktop-nav '>
         <div className='flex flex-wrap justify-between items-center gap-2 p-4'>
         <div className='flex justify-center items-center'>
-          <Link to='/'><img src={logo} alt='logo' className='h-14' /></Link>
-          <p className='font-bold text-green-600 text-lg'>Wellness <span className='text-cyan-600'>Hub</span></p>
+          <Link to='/' className='flex items-center justify-center'><img src={logo} alt='logo' className='h-14'  />
+            <p className='font-bold text-green-600 text-lg'>Wellness <span className='text-cyan-600'>
+            Hub</span></ p>
+            </Link>
         </div>
         <p className='lg:text-4xl md:text-2xl sm:text-xl text-green-700 header-message'>Empower Your Health Journey</p>
         <div className='hidden md:flex'>
