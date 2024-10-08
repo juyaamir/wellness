@@ -6,9 +6,9 @@ import { useNavigate } from "react-router-dom";
 const Feedback = () => {
   const navigate = useNavigate();
 
-/*   setTimeout(() => {
+  setTimeout(() => {
     navigate('/');
-  }, 5000); */
+  }, 5000);
   return (
     <div className='fixed flex justify-center items-center inset-0 bg-black bg-opacity-50 p-8 text-center md:text-start overflow-auto'>
              <Link to='/'
