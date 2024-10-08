@@ -10,7 +10,7 @@ const Feedback = () => {
     navigate('/');
   }, 5000);
   return (
-    <div className='fixed flex justify-center items-center inset-0 bg-black bg-opacity-50 p-2 h-auto scroll-auto text-center md:text-start'>
+    <div className='fixed flex justify-center items-center inset-0 bg-black bg-opacity-50 p-8 text-center md:text-start'>
              <Link to='/'
                 className='px-4 py-2 rounded-full bg-white absolute top-2 right-2 z-50 text-xl '
             >X</Link>
@@ -18,7 +18,6 @@ const Feedback = () => {
 
             <div className='flex justify-center items-center'>
               <img src={instagram} alt="feedback image" className='object-cover md:h-full' />
-              {/* Desktop Close Button */}
 
             </div>
             <div className='flex flex-col  gap-4 items-center justify-center '>
