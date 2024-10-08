@@ -1,4 +1,4 @@
-import { useState} from "react"
+import { useState, useEffect} from "react"
 import doc1 from '../assets/doc1.png'
 import health from '../assets/health.png'
 import axios from 'axios'
@@ -25,6 +25,7 @@ interface Topic {
 const Categories = () => {
   const [error, setError] = useState<null | string>(null);
   const [loading, setLoading] = useState(false);
+  const [isPregnant, setIsPregnant] = useState(false);
   const [topics, setTopics] = useState<Topic[]>([]);
   const [formData, setFormData] = useState<Topics>({
     sex: '',
@@ -35,12 +36,20 @@ const Categories = () => {
 
   });
 
+  useEffect(() => {
+    if(formData.sex  === 'female') {
+      setIsPregnant(true);
+    } else {
+      setIsPregnant(false);
+    }
+  }, [formData.sex]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const {name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value
-    })
+    });
   };
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -100,7 +109,7 @@ const Categories = () => {
       </div>
       <div className="bg-green-600 flex flex-wrap md:flex-nowrap gap-2 justify-around md:p-6">
         <div className="bg-gray-100 rounded-md md:p-4 shadow-2xl my-health">
-          <h2 className="text-2xl font-bold text-center text-green-700 border-b-2 p-4 border-gray-400">My Health Recommendation Tool</h2>
+          <h2 className="text-2xl font-bold text-center text-green-700 border-b-2 p-4 border-gray-400">Personalized Health Recommendation Tool</h2>
           <p className="text-center ">Answer a few simple questions to get personalized health recommendations</p>
           <form className="flex flex-col gap-3 p-4" onSubmit={handleSubmit}>
             <div>
@@ -120,13 +129,17 @@ const Categories = () => {
                 <label htmlFor="female">Female</label>
               </div>
             </div>
-            <div>
+            {
+              isPregnant && 
+              <div>
               <label htmlFor="pregnant">Are you pregnant? </label>
               <select name="pregnant" id="pregnant" onChange={handleChange} className="border border-gray-400 rounded-md">
                 <option value="0">No</option>
                 <option value="1">Yes</option>
               </select>
             </div>
+            }
+
             <div>
               <label htmlFor="tobaccoUse">Do you use tobacco? </label>
               <select name="tobaccoUse" id="tobaccoUse" onChange={handleChange} className="border border-gray-400 rounded-md">

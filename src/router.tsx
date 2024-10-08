@@ -1,8 +1,8 @@
 
 import Home from './pages/Home'
 import About from './pages/About'
-import Blog from './pages/Blog'
-import Categories from './pages/Categories'
+import Blog from './pages/Topics'
+import Categories from './pages/myHealth'
 import Contact from './pages/Contact'
 import TopicDetails from './pages/topicDetails'
 import { Route, Routes } from 'react-router-dom'
