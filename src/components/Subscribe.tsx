@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import subscribe from '../assets/subscribe.avif';
+import subscribe from '../assets/subscribe.avif'
 import { useNavigate } from 'react-router-dom';
-
 const Subscribe = () => {
   const [formData, setFormData] = React.useState({
     email: '',

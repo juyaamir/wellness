@@ -3,7 +3,7 @@ function App() {
  
 
   return (
-    <div className='min-w-72'>
+    <div className=''>
       <div className='max-w-screen-xl mx-auto bg-white'>
         <MainLayout  />
       </div>
