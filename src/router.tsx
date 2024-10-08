@@ -7,6 +7,7 @@ import Contact from './pages/Contact'
 import TopicDetails from './pages/topicDetails'
 import { Route, Routes } from 'react-router-dom'
 import Subscribe from './components/Subscribe'
+import Feedback from './components/Feedback'
 
 
 const Router = () => {
@@ -20,6 +21,7 @@ const Router = () => {
       < Route path='/my-health' element={<Categories />} />
       < Route path='/contact' element={<Contact />} />
       < Route path='/subscribe' element={<Subscribe />} />
+      < Route path='/feedback' element={<Feedback />} />
     </Routes>
   )
 }

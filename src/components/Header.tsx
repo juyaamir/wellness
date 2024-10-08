@@ -2,14 +2,13 @@ import { useState } from 'react';
 import { navbar } from '../data/data.tsx';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
-import { CgProfile } from "react-icons/cg";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { GrClose } from "react-icons/gr";
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-  const [authenticated, setAuthenticated] = useState(false);
+
   const handleToggle = () => {
     setShowNav(!showNav);
   };
@@ -30,11 +29,11 @@ const Header = () => {
           <input type='search' placeholder='Search Wellness Hub...' className='px-2 py-1 border border-gray-300 hover:outline-green-400 hover:shadow-lg search-input' />
           <button className='px-2 bg-green-600 hover:bg-green-800 text-white py-1 border-none rounded-tr-md rounded-br-md'>Search</button>
         </div>
-        <div className='hidden md:flex'>
+        
           <Link to ='/subscribe' 
           className='text-green-600 font-bold px-2 py-1 rounded-lg hover:text-white hover:bg-green-600'>
             SUBSCRIBE</Link>
-        </div>
+      
         </div>
       <nav className=' flex  justify-center gap-8 items-center bg-slate-100 text-green-600 border-y border-slate-400 '>
         {navbar.map((item) => (
@@ -51,16 +50,14 @@ const Header = () => {
           <Link to='/' className='flex items-center justify-center pt-2'><img src={logo} alt='logo' className='h-14 ' />
           <p className='font-bold text-green-600 text-lg'>Wellness <span className='text-cyan-600'>Hub</span></p></Link>
         
-        <div className='flex  justify-between  '>
+        <div className='flex  justify-between items-center font-semibold'>
             <button className='px-4 py-2 rounded-md  text-2xl ' onClick={handleToggle}>
               {showNav ? <GrClose size={30} /> : <RxHamburgerMenu size={36} />}
             </button>
             <button className='focus:bg-gray-200 px-4 py-2 ' onClick={handleSearchToggle}>Search</button>
-            <button className='px-4 py-2 ' onClick={() => setAuthenticated(true)}>
-              {
-                authenticated ?  'Hi, Juya': <CgProfile size={36} className='' /> 
-              }
-            </button>
+            <Link to ='/subscribe' 
+          className='px-4 py-2 rounded-lg mr-2 hover:text-orange-500 '>
+            Subscribe</Link>
         </div>
         {
           showSearch && (
