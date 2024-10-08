@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import subscribe from '../assets/subscribe.avif';
+import subscribe from '../assets/subscribe.png';
 import { useNavigate } from 'react-router-dom';
 
 const Subscribe = () => {
@@ -32,7 +32,8 @@ const Subscribe = () => {
         <Link to='/'
           className='px-4 py-2 rounded-full bg-white absolute top-2 right-2 z-50 text-xl '
         >X</Link>
-        <div className='subscribe bg-white relative gap-2 rounded-lg flex flex-col md:flex-row w-full max-w-4xl overflow-auto'>
+        <div 
+        className='subscribe bg-white relative gap-2  rounded-lg flex flex-col md:flex-row w-full max-w-4xl overflow-auto'>
           <div className='flex justify-center items-center w-full md:w-1/2'>
             <img src={subscribe} alt="subscribe image" className='object-cover w-full h-full md:h-auto rounded-t-lg md:rounded-none md:rounded-l-lg' />
           </div>

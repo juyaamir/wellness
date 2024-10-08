@@ -6,15 +6,15 @@ import { useNavigate } from "react-router-dom";
 const Feedback = () => {
   const navigate = useNavigate();
 
-  setTimeout(() => {
+/*   setTimeout(() => {
     navigate('/');
-  }, 5000);
+  }, 5000); */
   return (
-    <div className='fixed flex justify-center items-center inset-0 bg-black bg-opacity-50 p-8 text-center md:text-start'>
+    <div className='fixed flex justify-center items-center inset-0 bg-black bg-opacity-50 p-8 text-center md:text-start overflow-auto'>
              <Link to='/'
                 className='px-4 py-2 rounded-full bg-white absolute top-2 right-2 z-50 text-xl '
             >X</Link>
-          <div className='subscribe bg-white relative gap-1 rounded-lg flex flex-col md:flex-row p-2 '>
+          <div className='subscribe bg-white relative gap-1 rounded-lg flex flex-col-reverse  md:flex-row p-2 overflow-auto'>
 
             <div className='flex justify-center items-center'>
               <img src={instagram} alt="feedback image" className='object-cover md:h-full' />
