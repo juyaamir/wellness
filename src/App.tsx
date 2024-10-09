@@ -1,13 +1,17 @@
 import MainLayout from './components/MainLayout'
+import { SearchProvider } from './context'
 function App() {
  
 
   return (
-    <div className=''>
+    <SearchProvider>
+      <div className=''>
       <div className='max-w-screen-xl mx-auto bg-white'>
         <MainLayout  />
       </div>
     </div>
+    </SearchProvider>
+
 
   )
 }
