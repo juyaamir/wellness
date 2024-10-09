@@ -4,6 +4,8 @@ import health from '../assets/health.png'
 import axios from 'axios'
 import { RotatingLines } from 'react-loader-spinner'
 import { Link } from "react-router-dom"
+
+import useFetchData from "../components/useFetchData"
 interface Topics {
   sex: string;
   age: number;
