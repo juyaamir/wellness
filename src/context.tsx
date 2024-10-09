@@ -1,14 +1,19 @@
-// context/SearchContext.tsx
+
 import React, { createContext, useState, useContext } from 'react';
 
 interface SearchContextProps {
   searchItem: string;
   setSearchItem: (term: string) => void;
 }
+interface SearchProviderProps {
+  children: React.ReactNode;
+}
 
 const SearchContext = createContext<SearchContextProps | undefined>(undefined);
 
-export const SearchProvider: React.FC = ({ children }) => {
+
+
+export const SearchProvider: React.FC<SearchProviderProps> = ({ children }) => {
   const [searchItem, setSearchItem] = useState('');
 
   return (

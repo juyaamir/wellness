@@ -7,7 +7,15 @@ import useFetchData from '../components/useFetchData'
 } 
 const Blog: React.FC = () => {
   const url = 'https://health.gov/myhealthfinder/api/v3/itemlist.json?Type=topic';
-  const { data, error, loading } = useFetchData(url);
+  interface ApiResponse {
+    Result: {
+      Items: {
+        Item: Topic[];
+      };
+    };
+  }
+  
+  const { data, error, loading } = useFetchData<ApiResponse>(url);
   const topics = data?.Result?.Items?.Item || [];
   if (loading) {
     return <div className='flex justify-center items-center pt-20'>
