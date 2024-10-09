@@ -18,54 +18,49 @@ const SearchResult = () => {
     const filteredApiData = apiData.filter((item: { Title: string }) => item.Title.toLowerCase().includes(searchItem.toLowerCase()));
 
     return (
-        <div>
+        <div className="p-4">
             {filteredArticles.length > 0 && (
                 <div>
-                    <h2 className="bg-red-500 text-xl">Articles</h2>
+                    <h2 className="bg-green-600 text-xl text-center p-1 text-white">Articles</h2>
                     {filteredArticles.map((article: { title: string, link: string }) => (
-                        <div key={article.link}>
-                            <Link to='/resources'>{article.title}</Link>
-                        </div>
+                        <Link to={article.link} target="_blank" className="block p-1 hover:underline" key={article.link}>{article.title}</Link>
                     ))}
                 </div>
             )}
             {filteredVideos.length > 0 && (
                 <div>
-                    <h2 className="bg-gray-200 text-2xl p-1 ">Videos</h2>
-                    {filteredVideos.map((video: { title: string, link: string }) => (
-                        <div key={video.link}>
-                            <Link to={video.link} target="_blank">{video.title}</Link>
-                        </div>
+                    <h2 className="bg-green-600 text-xl text-center p-1 text-white">Videos</h2>
+                    {filteredArticles.map((video: { title: string, link: string }) => (
+                        <Link to={video.link} target="_blank" className="block p-1 hover:underline" key={video.link}>{video.title}</Link>
                     ))}
                 </div>
             )}
             {filteredEbooks.length > 0 && (
                 <div>
-                    <h2 className="bg-red-500 text-xl">Ebooks</h2>
-                    {filteredEbooks.map((ebook: { title: string, link: string }) => (
-                        <div key={ebook.link}>
-                            <Link to={ebook.link} target="_blank">{ebook.title}</Link>
-                        </div>
+                    <h2 className="bg-green-600 text-xl text-center p-1 text-white">eBooks</h2>
+                    {filteredArticles.map((book: { title: string, link: string }) => (
+                        <Link to={book.link} target="_blank" className="block p-1 hover:underline" key={book.link}>{book.title}</Link>
                     ))}
                 </div>
             )}
             {filteredExternalLinks.length > 0 && (
                 <div>
-                    <h2 className="bg-red-500 text-xl">External Links</h2>
-                    {filteredExternalLinks.map((link: { title: string, link: string }) => (
-                        <div key={link.link}>
-                            <Link to={link.link} target="_blank">{link.title}</Link>
-                        </div>
+                    <h2 className="bg-green-600 text-xl text-center p-1 text-white">External Links</h2>
+                    {filteredArticles.map((link: { title: string, link: string }) => (
+                        <Link to={link.link} target="_blank" className="block p-1 hover:underline" key={link.link}>{link.title}</Link>
                     ))}
                 </div>
             )}
-            {filteredApiData.length > 0 && (
+            {
+            filteredApiData.length > 0 && (
                 <div>
-                    <h2 className="bg-red-500 text-xl">API Data</h2>
+                    <h2 className="bg-green-600 text-xl text-center p-1 text-white">Health Topics</h2>
                     {filteredApiData.map((item: { Title: string, Id: number }) => (
-                        <div key={item.Id}>
-                            <Link to={`/topic/${item.Id}`}>{item.Title}</Link>
-                        </div>
+                       
+                        <Link to={`/topic/${item.Id}`}  key={item.Id} 
+                        className="block p-1 hover:underline"
+                        >{item.Title}</Link>
+                        
                     ))}
                 </div>
             )}
