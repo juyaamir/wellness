@@ -1,16 +1,19 @@
 // components/Header.tsx
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { navbar } from '../data/data';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { GrClose } from "react-icons/gr";
 import SearchButton from './SearchButton';
+import { useSearch } from '../context';
 
 const Header = () => {
+  const { searchItem, setSearchItem } = useSearch();
   const [showNav, setShowNav] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleToggle = () => {
     setShowNav(!showNav);
@@ -21,8 +24,24 @@ const Header = () => {
   };
 
   const handleSearch = () => {
+    if(searchItem === '') return;
     navigate('/search');
   };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchItem(e.target.value);
+  };
+
+  useEffect(() => {
+    if (location.pathname === '/search' || location.pathname === '/') {
+      if (searchItem === '') {
+          navigate('/');
+      } else {
+          navigate('/search');
+      }
+  }
+
+  }, [searchItem, navigate, location.pathname]);
 
   return (
     <header className='min-h-16 '>
@@ -36,7 +55,13 @@ const Header = () => {
           </div>
           <p className='lg:text-4xl md:text-2xl sm:text-xl text-green-700 header-message'>Empower Your Health Journey</p>
           <div className='hidden md:flex'>
-            <input type='search' placeholder='Search Wellness Hub...' className='px-2 py-1 border border-gray-300 hover:outline-green-400 hover:shadow-lg search-input' />
+            <input 
+            type='search' 
+            placeholder='Search Wellness Hub...' 
+            className='px-2 py-1 border border-gray-300 hover:outline-green-400 hover:shadow-lg search-input' 
+            value={searchItem}
+            onChange={handleInputChange}
+            />
             <button onClick={handleSearch} className='px-2 bg-green-600 hover:bg-green-800 text-white py-1 border-none rounded-tr-md rounded-br-md'>Search</button>
           </div>
           <Link to='/subscribe' className='text-green-600 font-bold px-2 py-1 rounded-lg hover:text-white hover:bg-green-600'>
