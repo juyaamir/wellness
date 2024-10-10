@@ -7,10 +7,8 @@ const ImageSlider: React.FC<SliderProps> = ({images})=> {
   const [currentIndex, setCurrentIndex] = useState(0);
   const homeSlider = {
     width: '100%',
-    maxWidth: '1200px',
+/*     maxWidth: '1200px', */
     height: '380px',
-    border: '2px solid #bbb',
-    borderRadius: '10px',
  /*    boxShadow: '10px 10px 1px red, -10px -10px 1px yellow, 10px -10px 1px green, -10px 10px 1px blue' */
     
   };
@@ -22,7 +20,7 @@ const ImageSlider: React.FC<SliderProps> = ({images})=> {
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',  
-    borderRadius: '10px',    
+
 
   };
   useEffect(() => {
