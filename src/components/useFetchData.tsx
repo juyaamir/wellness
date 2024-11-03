@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react"
-import axios from 'axios'
+import { useState, useEffect } from "react";
+import axios from 'axios';
 
 interface FetchData<T> {
     data: T | null;
@@ -10,17 +10,18 @@ interface FetchData<T> {
 const useFetchData = <T,>(url: string): FetchData<T> => {
     const [data, setData] = useState<T | null>(null);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState<string | null>('');
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        
         const getData = async () => {
             setLoading(true);
             try {
                 const response = await axios.get(url);
                 setData(response.data);
             } catch (error) {
-                if( error instanceof Error) {
+                if (axios.isAxiosError(error)) {
+                    setError(`Error: ${error.message}`);
+                } else if (error instanceof Error) {
                     setError(`Error: ${error.message}`);
                 } else {
                     setError(`An unknown error occurred`);
@@ -32,12 +33,7 @@ const useFetchData = <T,>(url: string): FetchData<T> => {
         getData();
     }, [url]);
 
+    return { data, loading, error };
+};
 
-  return (
-    {
-        data, loading, error
-    }
-  )
-}
-
-export default useFetchData
+export default useFetchData;

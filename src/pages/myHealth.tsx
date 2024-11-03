@@ -64,7 +64,7 @@ const Categories = () => {
     const getData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`https://health.gov/myhealthfinder/api/v3/myhealthfinder.json?age=${formData.age}&sex=${formData.sex}&pregnant=${formData.pregnant}&sexuallyActive=${formData.sexuallyActive}&tobaccoUse=${formData.tobaccoUse}`);
+        const response = await axios.get(`${import.meta.env.VITE_MY_HEALTH_API}?age=${formData.age}&sex=${formData.sex}&pregnant=${formData.pregnant}&sexuallyActive=${formData.sexuallyActive}&tobaccoUse=${formData.tobaccoUse}`);
         const topicsData: Topic[] = response.data.Result.Resources.all.Resource;
         console.log(topicsData);
         setTopics(topicsData);
